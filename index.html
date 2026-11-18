@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prof Brawl — Edizione Natalizia</title>
+  <meta name="description" content="Prof Brawl: il gioco di carte e figurine collezionabili in edizione speciale natalizia." />
+
+  <!-- Google Fonts: Display elegante + Sans-serif leggibile -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="site-background-img"></div>
+
+  <!-- HEADER & NAVBAR -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" data-route="home">
+        <span class="brand-emblem" aria-hidden="true">✦</span>
+        <span class="brand-text">Prof Brawl</span>
+      </a>
+
+      <!-- Bottone menu mobile -->
+      <button
+        id="mobile-menu-toggle"
+        class="mobile-toggle"
+        aria-label="Apri menu di navigazione"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Barra di navigazione -->
+      <nav id="main-nav" class="main-nav" aria-label="Menu principale">
+        <a href="#home" class="nav-link active" data-route="home">Home</a>
+        <a href="#figurine" class="nav-link" data-route="figurine">Figurine</a>
+        <a href="#come-giocare" class="nav-link" data-route="come-giocare">Come giocare</a>
+        <a href="#come-comprare" class="nav-link" data-route="come-comprare">Come comprare</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENUTO PRINCIPALE (SPA SECTIONS) -->
+  <main class="site-main">
+
+    <!-- ==================== SEZIONE 1: HOME ==================== -->
+    <section id="page-home" class="page-section active" aria-labelledby="home-title">
+      <div class="container">
+        <div class="hero-card">
+          <span class="festive-badge">✦ Edizione Speciale di Natale ✦</span>
+          <h1 id="home-title" class="hero-title">Prof Brawl</h1>
+          <p class="hero-subtitle">
+            Benvenuti nel portale ufficiale di <strong>Prof Brawl</strong>. Scopri la collezione completa
+            delle figurine annuali, consulta il regolamento ufficiale e preparati alla sfida natalizia più epica dell'anno.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#figurine" class="btn btn-gold" data-route="figurine">Esplora le Figurine</a>
+            <a href="#come-giocare" class="btn btn-outline" data-route="come-giocare">Leggi il Regolamento</a>
+          </div>
+        </div>
+
+        <!-- Sezione centrale con testi segnaposto per informazioni principali -->
+        <div class="info-grid">
+          <article class="info-card">
+            <div class="info-icon" aria-hidden="true">★</div>
+            <h2>Cos'è Prof Brawl</h2>
+            <p>
+                Un gioco estremamente ironico, nato per comprare la focaccia e diventato un progetto iconico. 
+                In questo gioco dovrai impersonificare i tuoi professori preferiti per stressare quelli avversari 
+                così tanto da mandarli in burnout.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-icon" aria-hidden="true">❄</div>
+            <h2>La Collezione 25 Carte</h2>
+            <p>
+              A ogni festa di Natale 25 figurine esclusive, con statistiche, abilità e citazioni indimenticabili.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="info-icon" aria-hidden="true">❖</div>
+            <h2>Novità &amp; Aggiornamenti</h2>
+            <p>
+              NUOVA COLLEZIONE DISPONIBILE - QUESTA VOLTA E' GIOCABILE!
+              ALLA FESTA DI NATALE FAREMO IL TORNEO!!
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEZIONE 2: FIGURINE ==================== -->
+    <section id="page-figurine" class="page-section" aria-labelledby="figurine-title" hidden>
+      <div class="container">
+        <header class="section-header">
+          <span class="section-kicker">Archivio Ufficiale</span>
+          <h1 id="figurine-title" class="section-title">Collezione Figurine</h1>
+          <p class="section-lead">
+            Passa il mouse su una figurina per scoprire il retro, oppure cliccala per aprirla a schermo intero.
+          </p>
+
+          <!-- Selettore Anno -->
+          <div class="year-selector-wrap">
+            <label for="year-select" class="year-label">Anno di riferimento:</label>
+            <select id="year-select" class="year-select" aria-label="Seleziona anno delle figurine">
+              <!-- Popolato dinamicamente da JS -->
+            </select>
+            <span id="cards-counter" class="cards-counter">0 figurine</span>
+          </div>
+        </header>
+
+        <!-- Stato caricamento / errore -->
+        <div id="figurine-status" class="status-message" hidden></div>
+
+        <!-- Griglia 25 Figurine -->
+        <div id="figurine-grid" class="figurine-grid" aria-live="polite">
+          <!-- Popolato dinamicamente da JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEZIONE 3: COME GIOCARE ==================== -->
+    <section id="page-come-giocare" class="page-section" aria-labelledby="giocare-title" hidden>
+      <div class="container narrow-container">
+        <header class="section-header">
+          <span class="section-kicker">Manuale Ufficiale</span>
+          <h1 id="giocare-title" class="section-title">Come giocare</h1>
+          <p class="section-lead">
+            Tutte le regole per iniziare la tua partita a Prof Brawl. 
+          </p>
+        </header>
+
+        <div class="rules-document">
+          <article class="rule-block">
+            <h2>1. Obiettivo del gioco</h2>
+            <p>
+              Nel gioco puoi impersonificare i Professori schierati e il tuo obiettivo è quello di stressare così tanto l'avversario da mandarlo in burnout, senza stressarti troppo.
+            </p>
+          </article>
+
+          <article class="rule-block">
+            <h2>2. Preparazione della partita</h2>
+            <ul>
+              <li><strong>Numero di giocatori:</strong> 2+</li>
+              <li><strong>Composizione del mazzo:</strong> Deck personale composto da carte Professore e carte Strumento.</li>
+              ATTENZIONE: Il deck personale può essere diverso da quello di default, noi vendiamo le carte ma voi siete 
+                  liberissimi di scambiarle, comprare singole carte per avere doppioni o comprare pack 
+                  personalizzati, se vi piace avere un deck composto da un solo Professore, siete liberissimi di 
+                  farlo…
+              <li><strong>Posizionamento iniziale:</strong> All'inizio del gioco, ogni giocatore ha 5 vite, che 
+                        rappresentano il numero di Professori che può schierare durante l'intera partita e due slot liberi per professori. </li>
+                        Ha poi a sua disposizione una mano iniziale composta da 5 carte e un deck personale composto da carte Professore e carte Strumento. </li>
+              <li><strong> Solo per il primo turno, </strong> entrambi I giocatori devono scegliere un Professore da schierare 
+                          simultaneamente, a prescindere dall'ordine dei turni. Questo significa che siete liberi di attaccare dal <strong>primissimo</strong> turno.</strong></li>
+            </ul>
+          </article>
+
+          <article class="rule-block">
+            <h2>3. Svolgimento del turno</h2>
+            <p>
+              Ogni turno è suddiviso nelle seguenti fasi principali:
+            </p>
+            <ol>
+              <li><strong>Fase di Pesca:</strong> Il giocatore può pescare una carta purché la sua mano sia composta da meno di 5 carte.</li>
+              <li><strong>Schieramento:</strong> Se il giocatore ha uno slot libero, può schierare <strong>un</strong> professore per riempire lo slot.</li>
+              <li><strong>Fase di Sfida - Brawl:</strong>  Il giocatore può scegliere quale abilità utilizzare tra quelle dei professori correntemente schierati per attaccare un professore avversario o curare uno dei suoi 
+                          professori.</li>
+            </ol>
+          </article>
+
+          <article class="rule-block">
+            <h2>4. Tipi di carte e limiti</h2>
+            <p>
+              <strong>4.1 Carte Professore:</strong><br>
+              Queste carte sono molto ironiche e citano frasi o eventi iconici/ricorrenti con riferimento agli specifici professori. Ogni Professore ha un livello iniziale di caffeina che rappresenta in qualche modo quanta energia ha secondo noi.
+            </p>
+            <p>
+              <strong>4.1.1 Burnout:</strong><br>
+              Quando un Professore perde tutta la sua caffeina, va in burnout nella Chill Room e il giocatore perde uno dei suoi cuori.
+            </p>
+            <p>
+              <strong>4.2 Abilità:</strong><br>
+              Le abilità dei Professori possono danneggiare un Professore avversario, oppure curare il Professore stesso o il suo collega.
+            </p>
+            <p>
+              <strong>4.2.1 Limiti delle abilità:</strong>
+            </p>
+            <ul>
+              <li>Alcune abilità richiedono la presenza di colleghi storici in campo; non devono necessariamente essere schierati dal giocatore che le usa, basta che siano presenti in campo, anche se schierati da un avversario (indicato come <em>If</em>).</li>
+              <li>Alcune abilità richiedono certi livelli di caffeina per essere usate (indicato come <em>caffeina ≥</em>, <em>caffeina ≤</em> oppure <em>caffeina ==</em>).</li>
+              <li>Alcune abilità possono essere usate un certo numero di volte per partita (indicato come <em>Limite</em>).</li>
+              <li>Si può usare una sola abilità per turno.</li>
+            </ul>
+            <p>
+              <strong>5. Carte Strumento:</strong><br>
+              Ogni mazzo ha 3 carte Strumento, che possono essere usate in qualsiasi momento durante la partita, anche durante il turno dell’avversario, purché il giocatore le abbia nella mano corrente.
+            </p>
+            <p>
+              <strong>6. Fine del gioco:</strong>
+            </p>
+            <ul>
+              <li>Il gioco termina quando un giocatore ha perso tutti i propri cuori, il che significa che ha schierato 5 Professori e tutti sono finiti in burnout.</li>
+              <li>Il gioco può terminare anche se, a prescindere da quanti cuori ha ancora a disposizione, il giocatore rimane con 0 Professori schierati. Questo significa che se per qualsiasi motivo entrambi gli slot rimangono vuoti, il giocatore senza Professori ha perso.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ==================== SEZIONE 4: COME COMPRARE ==================== -->
+    <section id="page-come-comprare" class="page-section" aria-labelledby="comprare-title" hidden>
+      <div class="container narrow-container">
+        <header class="section-header">
+          <span class="section-kicker">Ordini &amp; Contatti</span>
+          <h1 id="comprare-title" class="section-title">Come comprare</h1>
+          <p class="section-lead">
+            Vuoi ottenere i pacchetti ufficiali o la collezione completa di Prof Brawl? Ecco tutte le indicazioni.
+          </p>
+        </header>
+
+        <div class="buy-grid">
+          <article class="buy-card">
+            <h2>Pacchetti &amp; Edizioni disponibili</h2>
+            <p>
+              <strong>Edizione 2026</strong>
+            </p>
+            <ul class="clean-list">
+              <li><strong>Figurina Singola:</strong> 1€, figurina specifica stampata su richiesta.</li>
+              <li><strong>Box Natalizio Completo:</strong> 15€, box pensato per giocare - contiene il mazzo completo di 25 carte, tre segnalini
+                per segnare caffeina e vita del giocatore, la gameboard personalizzabile e stampabile.</li>
+              <li><strong>Set Completo 25 Carte:</strong> 10€, mazzo completo con le 25 figurine standard.</li>
+              <li><strong>25 Carte Personalizzate:</strong> 12€, mazzo di 25 figurine ma con composizione personalizzata, puoi scegliere
+                tu quanti doppioni avere, purchè la composizione finale sia sempre di 25 carte.</li>
+            </ul>
+          </article>
+
+          <article class="buy-card">
+            <h2>Contatti per ordinare</h2>
+            <p>
+              Debora Longo
+            </p>
+            <ul class="contact-list">
+              <li><span>Email:</span> <strong>debora.longo22@gmail.com</strong></li>
+              <li><span>WhatsApp:</span> <strong>+39 392 018 1909</strong></li>
+              <li><span>Telegram:</span> <strong>@RennaAcquatica </strong></li>
+              <li><span>Dal vivo:</span> <strong>Se mi beccate in giro, sentitevi liberi di fermarmi!</strong></li>
+            </ul>
+            <p>Per i professori: passerò negli uffici per ordini e/o offerte a breve!</p>
+          </article>
+
+          <article class="buy-card buy-card--full">
+            <h2>Modalità di consegna e pagamento</h2>
+            <p>
+              Le figurine saranno consegnate alla festa di Natale, previa puntualità della consegna.
+              Il pagamento avviene al momento dell'ordine stesso, con contanti oppure attraverso bonifico.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Prof Brawl</strong> &mdash; Edizione Natalizia</p>
+      <p class="footer-note">✦ Tutte le figurine e il regolamento sono proprietà della Renna ✦</p>
+    </div>
+  </footer>
+
+  <!-- MODALE / LIGHTBOX A SCHERMO INTERO PER LE FIGURINE -->
+  <div
+    id="card-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-card-title"
+    hidden
+  >
+    <div class="modal-backdrop" data-close-modal="true"></div>
+
+    <div class="modal-content">
+      <button
+        id="modal-close-btn"
+        class="modal-close"
+        aria-label="Chiudi anteprima a schermo intero"
+        data-close-modal="true"
+      >
+        &times;
+      </button>
+
+      <div class="modal-stage">
+        <button id="modal-prev-btn" class="modal-nav-btn" aria-label="Figurina precedente">&#10094;</button>
+
+        <div class="modal-card-container">
+          <div id="modal-card-flipper" class="modal-card-flipper">
+            <div class="modal-face modal-face--front">
+              <img id="modal-img-front" src="" alt="" />
+            </div>
+            <div class="modal-face modal-face--back">
+              <img id="modal-img-back" src="" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <button id="modal-next-btn" class="modal-nav-btn" aria-label="Figurina successiva">&#10095;</button>
+      </div>
+
+      <div class="modal-controls">
+        <div class="modal-info">
+          <span id="modal-card-meta" class="modal-meta"></span>
+          <h2 id="modal-card-title" class="modal-title"></h2>
+        </div>
+
+        <button id="modal-flip-btn" class="btn btn-gold">
+          ↻ Gira Figurina (Fronte / Retro)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

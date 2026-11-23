@@ -22,9 +22,9 @@
     { "anno": 2026, "numero": 20, "nome": "Dagnino", "fronte": "data/figurine2026/20.png", "retro": "data/figurine2026/26.png" },
     { "anno": 2026, "numero": 21, "nome": "Lagorio", "fronte": "data/figurine2026/21.png", "retro": "data/figurine2026/26.png" },
     { "anno": 2026, "numero": 22, "nome": "Odone", "fronte": "data/figurine2026/22.png", "retro": "data/figurine2026/26.png" },
-    { "anno": 2026, "numero": 22, "nome": "Pesca Ricca", "fronte": "data/figurine2026/23.png", "retro": "data/figurine2026/26.png" },
-    { "anno": 2026, "numero": 22, "nome": "Leotta", "fronte": "data/figurine2026/24.png", "retro": "data/figurine2026/26.png" },
-    { "anno": 2026, "numero": 22, "nome": "Chiola e Zucca", "fronte": "data/figurine2026/25.png", "retro": "data/figurine2026/26.png" },
+    { "anno": 2026, "numero": 23, "nome": "Pesca Ricca", "fronte": "data/figurine2026/23.png", "retro": "data/figurine2026/26.png" },
+    { "anno": 2026, "numero": 24, "nome": "Leotta", "fronte": "data/figurine2026/24.png", "retro": "data/figurine2026/26.png" },
+    { "anno": 2026, "numero": 25, "nome": "Chiola e Zucca", "fronte": "data/figurine2026/25.png", "retro": "data/figurine2026/26.png" },
 
 
     { "anno": 2025, "numero": 1, "nome": "Ricca", "fronte": "data/figurine2025/1.png", "retro": "data/figurine2025/26.png" },

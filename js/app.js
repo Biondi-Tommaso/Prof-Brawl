@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalNextBtn = document.getElementById('modal-next-btn');
 
   // === STATO APPLICAZIONE ===
-  const VALID_ROUTES = ['home', 'figurine', 'come-giocare', 'come-comprare'];
+  const VALID_ROUTES = ['home', 'figurine', 'come-giocare', 'torneo', 'come-comprare'];
   let allCards = [];
   let currentYearCards = [];
   let activeModalIndex = 0;
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. SELETTORE ANNO & RENDER GRIGLIA 25 FIGURINE
   // =========================================================================
   function populateYearSelector() {
-    // Estrae gli anni unici in ordine decrescente (es. 2025, 2024...)
+    // Estrae gli anni unici in ordine decrescente (es. 2026, 2025...)
     const years = [...new Set(allCards.map((card) => card.anno))].sort((a, b) => b - a);
 
     yearSelect.innerHTML = '';
